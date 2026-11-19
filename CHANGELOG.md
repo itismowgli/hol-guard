@@ -96,6 +96,27 @@ Older releases are preserved in the [changelog archive](docs/changelog-archive.m
 * **native:** a package-intent parse now sends the caller's `PATH` to the resident. The resident is long-lived, so its own `PATH` is the one it was spawned with; a manager it cannot resolve (`npx` from a test or tool directory) made the TypeScript launch evidence incomplete and sent a contained typecheck back to review even though the caller resolved the manager fine.
 * **native:** a resident that answers a context-digest request with its own error envelope is now reported by that code — and recorded against the resilience breaker — instead of being flattened into `native_context_digest_result_invalid`. An envelope outside the contract keeps its code in the rejection reason, and a rejected result names the contract clause that rejected it with the offending keys, so a foreign frame, a stale frame and a truncated read are no longer indistinguishable.
 
+## [3.60.1](https://github.com/hashgraph-online/hol-guard/compare/v3.60.0...v3.60.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **guard:** allow checking for a missing build folder by its full path ([#8065](https://github.com/hashgraph-online/hol-guard/issues/8065)) ([28b230e](https://github.com/hashgraph-online/hol-guard/commit/28b230e587e7a3af33e838cab9540c8325e5840f))
+* **guard:** allow find to filter by a written date ([#8067](https://github.com/hashgraph-online/hol-guard/issues/8067)) ([55e1fb5](https://github.com/hashgraph-online/hol-guard/commit/55e1fb501e87cdc59b0a2fce73be6d340f6abf7e))
+* **guard:** allow reading one GitHub variable by name ([#8066](https://github.com/hashgraph-online/hol-guard/issues/8066)) ([2976531](https://github.com/hashgraph-online/hol-guard/commit/29765313efc53375238f8f6fafacfc135d345957))
+* **guard:** read an input redirect on a later command as that command's read ([#8069](https://github.com/hashgraph-online/hol-guard/issues/8069)) ([18bbee8](https://github.com/hashgraph-online/hol-guard/commit/18bbee810f468c4843d3f3dbd8a6fe318817af62))
+* **guard:** read code in a heredoc commit message as message text ([#8026](https://github.com/hashgraph-online/hol-guard/issues/8026)) ([cb78985](https://github.com/hashgraph-online/hol-guard/commit/cb78985e11269ad236270d329f8c8220d8939e20))
+* **guard:** read find walks that pick files from a choice of names ([#8050](https://github.com/hashgraph-online/hol-guard/issues/8050)) ([70bbf64](https://github.com/hashgraph-online/hol-guard/commit/70bbf641b2304b220e663b509fc4e23e57195838))
+* **guard:** review heredoc Python after a quoted word or a cd into the workspace instead of blocking it ([#8036](https://github.com/hashgraph-online/hol-guard/issues/8036)) ([c4338ff](https://github.com/hashgraph-online/hol-guard/commit/c4338ffbbbe2b77d5946b0db2e6dbfaaf75e9f64))
+* **guard:** run heredoc Python with accented text in strings or comments in the sandbox ([#8048](https://github.com/hashgraph-online/hol-guard/issues/8048)) ([5dd6ad9](https://github.com/hashgraph-online/hol-guard/commit/5dd6ad9bb0d267528b0c23f4fd5a6fe86dfc4e06))
+* **guard:** screen bracketed search paths as the literal entry they may name ([#8068](https://github.com/hashgraph-online/hol-guard/issues/8068)) ([9351e92](https://github.com/hashgraph-online/hol-guard/commit/9351e922663b93881cf3b61da5e2eedd20053f98))
+* **guard:** stop Oh My Pi edits whose header names a missing file ([#8018](https://github.com/hashgraph-online/hol-guard/issues/8018)) ([e1d3a0c](https://github.com/hashgraph-online/hol-guard/commit/e1d3a0c1e9d4bf560a36d7aa000852bbf39c5702))
+
+
+### Documentation
+
+* **benchmarks:** add CIGAR results for 3.60.0a121 and two hold fixes ([#8061](https://github.com/hashgraph-online/hol-guard/issues/8061)) ([3fb92ae](https://github.com/hashgraph-online/hol-guard/commit/3fb92aedc9bedd4a96113913c1d231dfcb6bb79d))
+
 ## [3.60.0](https://github.com/hashgraph-online/hol-guard/compare/v3.59.0...v3.60.0) (2026-11-19)
 
 
